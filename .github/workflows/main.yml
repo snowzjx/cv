@@ -25,11 +25,13 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
       - name: Github Action for Compiling the Paper
         uses: xu-cheng/latex-action@v2
         with:
           root_file: cv.tex
+          compiler: xelatex
+          extra_fonts: |
+            ./fonts/*.ttf
           
       - name: Github Action for Releasing the PDF
         uses: softprops/action-gh-release@v1
