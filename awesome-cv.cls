@@ -621,6 +621,7 @@
       {\pubtitlestyle{#2} & \entrylocationstyle{#3} \\
       \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
   \end{tabular*}%
+  \vspace{0.5mm}
 }
 
 
