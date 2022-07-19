@@ -1,107 +1,175 @@
-%!TEX TS-program = xelatex
-%!TEX encoding = UTF-8 Unicode
-% Awesome CV LaTeX Template for CV/Resume
-%
-% This template has been downloaded from:
-% https://github.com/posquit0/Awesome-CV
-%
-% Author:
-% Claud D. Park <posquit0.bj@gmail.com>
-% http://www.posquit0.com
-%
-% Template license:
-% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
-%
+\documentclass[10pt, a4paper]{article}
+\usepackage{mathptmx}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
+\usepackage[left=0.5in, right=0.5in, bottom=1in, top=1in]{geometry}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage[skins,breakable]{tcolorbox}
 
+\newtcolorbox{cvsection}[2][]{%
+  blanker,
+  leftupper=4cm,
+  before skip=8mm,%   enlarge distance to the next box
+  after skip=8mm,%   enlarge distance to the next box
+  title=\textbf{#2}\vspace{-2.2ex},
+  breakable,
+%  fonttitle=\mathptmx\bfseries,
+  coltitle=black,
+%  fontupper=\sffamily,%
+  #1
+}
 
-%-------------------------------------------------------------------------------
-% CONFIGURATIONS
-%-------------------------------------------------------------------------------
-% A4 paper size by default, use 'letterpaper' for US letter
-\documentclass[11pt, a4paper]{awesome-cv}
-
-% Configure page margins with geometry
-\geometry{left=1.4cm, top=1.4cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
-
-% Specify the location of the included fonts
-\fontdir[fonts/]
-
-% Color for highlights
-% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
-%                 awesome-nephritis, awesome-concrete, awesome-darknight
-\colorlet{awesome}{awesome-red}
-% Uncomment if you would like to specify your own color
-% \definecolor{awesome}{HTML}{CA63A8}
-
-% Colors for text
-% Uncomment if you would like to specify your own color
-% \definecolor{darktext}{HTML}{414141}
-% \definecolor{text}{HTML}{333333}
-% \definecolor{graytext}{HTML}{5D5D5D}
-% \definecolor{lighttext}{HTML}{999999}
-
-% Set false if you don't want to highlight section with awesome color
-\setbool{acvSectionColorHighlight}{false}
-
-% If you would like to change the social information separator from a pipe (|) to something else
-\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
-
-
-%-------------------------------------------------------------------------------
-%	PERSONAL INFORMATION
-%	Comment any of the lines below if they are not required
-%-------------------------------------------------------------------------------
-% Available options: circle|rectangle,edge/noedge,left/right
-% \photo{./examples/profile.png}
-\name{Junxue}{ZHANG}
-\position{Ph.D. Candidate{\enskip\cdotp\enskip}Hong Kong University of Science and Technology}
-\address{Office 3661, Academic Building, HKUST, Clear Water Bay, Hong Kong}
-
-\mobile{(+86) 17328710224}
-\email{jzhangcs@cse.ust.hk}
-\homepage{snowzjx.me}
-\github{snowzjx}
-% \linkedin{posquit0}
-% \gitlab{gitlab-id}
-% \stackoverflow{SO-id}{SO-name}
-% \twitter{@twit}
-% \skype{skype-id}
-% \reddit{reddit-id}
-% \medium{madium-id}
-\googlescholar{tDWLpawAAAAJ}{Google Scholar}
-%% \firstname and \lastname will be used
-% \googlescholar{googlescholar-id}{}
-% \extrainfo{extra informations}
-
-%\quote{``Be the change that you want to see in the world."}
-
-
-%-------------------------------------------------------------------------------
 \begin{document}
+\begin{center}
+\LARGE{\textbf{Junxue ZHANG}}\vspace{1ex}
+\hrule
+\end{center}
 
-% Print the header with above personal informations
-% Give optional argument to change alignment(C: center, L: left, R: right)
-\makecvheader
+\begin{center}
+Office 3661, Academic Building, Hong Kong University of Science and Technology, Clear Water Bay. Hong Kong
+\begin{minipage}{0.5\textwidth}
+Email: \href{mailto:jzhangcs@cse.ust.hk}{jzhangcs@cse.ust.hk}
+\hfill
+URL: \href{https://snowzjx.me}{https://snowzjx.me}
+\end{minipage}
+\end{center}
 
-% Print the footer with 3 arguments(<left>, <center>, <right>)
-% Leave any of these blank if they are not needed
-\makecvfooter
-  {\today}
-  {Junxue ZHANG~~~·~~~Curriculum Vitae}
-  {\thepage}
+\begin{cvsection}{RESEARCH \\ INTERESTS\vspace{-0.8ex}}
+Datacenter Networking; Machine Learning Systems; Privacy-preserving AI	
+\end{cvsection}
 
+\begin{cvsection}{EDUCATION}
+\textbf{Ph.D., Hong Kong University of Science and Technology} \hfill Sept. 2016 -- Aug. 2022
 
-%-------------------------------------------------------------------------------
-%	CV/RESUME CONTENT
-%	Each section is imported separately, open each file in turn to modify content
-%-------------------------------------------------------------------------------
-\input{cv/education.tex}
-\input{cv/publication.tex}
-\input{cv/experience.tex}
-\input{cv/activities.tex}
-%\input{cv/talk.tex}
-\input{cv/teaching.tex}
-\input{cv/honors.tex}
+Advisor: Prof. Kai Chen
+\vspace{1ex}
 
-%-------------------------------------------------------------------------------
+\textbf{MS.c., Southeast University} \hfill Sept. 2013 -- Jul. 2016
+
+Advisor: Prof. Junzhou Luo
+\vspace{1ex}
+
+\textbf{BS.c., Southeast University} \hfill Sept. 2009 -- Jul. 2013
+\end{cvsection}
+
+\begin{cvsection}{PUBLICATIONS}
+
+\textbf{Conference Publications:}
+
+\begin{itemize}[leftmargin=*]
+\item[1.]
+LiteFlow: Towards High-performance Adaptive Neural Networks for Kernel Datapath\\
+\underline{Junxue Zhang}, Chaoliang Zeng, Hong Zhang, Shuihai Hu, Kai Chen\\
+\emph{ACM Special Interest Group on Data Communication~(SIGCOMM), 2022}
+\vspace{1ex}
+\item[2.] 
+Practical Lossless Federated Singular Vector Decomposition Over Billion-Scale Data \\
+Di Chai, Leye Wang, \underline{Junxue Zhang}, Liu Yang, Shuowei Cai, Kai Chen, Qiang Yang\\
+\emph{ACM SIGKDD Conference on Knowledge Discovery and Data Mining~(KDD),2022}
+\vspace{1ex}
+\item[3.] 
+Multi-Objective Congestion Control \\
+Yiqing Ma, Han Tian, Xudong Liao, \underline{Junxue Zhang}, Weiyan Wang, Kai Chen, Xin Jin\\
+\emph{The European Conference on Computer Systems~(EuroSys), 2022}
+\vspace{1ex}
+\item[4.] 
+Sphinx: Enabling Privacy-Preserving Online Learning over the Cloud \\
+Han Tian, Chaoliang Zeng, Zhenhang Ren, Di Chai, \underline{Junxue Zhang}, Kai Chen, Qiang Yang \\
+\emph{IEEE Symposium on Security and Privacy~(S\&P), 2022}
+\vspace{1ex}
+\item[5.]
+Enabling ECN for Datacenter Networks with RTT Variations \\
+\underline{Junxue Zhang}, Wei Bai and Kai Chen\\
+\emph{International Conference on emerging Networking EXperiments and Technologies~(CoNEXT), 2019}
+\vspace{1ex}
+\item[6.]
+Resilient Datacenter Load Balancing in the Wild\\
+Hong Zhang, \underline{Junxue Zhang}, Wei Bai, Kai Chen and Mosharaf Chowdhury \\
+\emph{ACM Special Interest Group on Data Communication~(SIGCOMM), 2017}
+\end{itemize}
+\vspace{2ex}
+\textbf{Workshop Publications:}
+\begin{itemize}[leftmargin=*]
+\item[1.]
+Practical and Secure Federated Recommendation with Personalized Masks \\
+Liu Yang, \underline{Junxue Zhang}, Di Chai, Leye Wang, Kuo Guo, Kai Chen and Qiang Yang \\
+\emph{International Workshop on Trustworthy Federated Learning 
+in Conjunction with IJCAI 2022~(FL-IJCAI), 2022}
+\vspace{1ex}
+\item[2.]
+Secure Forward Aggregation for Vertical Federated Neural Networks \\
+Shuowei Cai, Di Chai, Liu Yang, \underline{Junxue Zhang}, Yilun Jin, Leye Wang, Kun Guo and Kai Chen \\
+\emph{International Workshop on Trustworthy Federated Learning 
+in Conjunction with IJCAI 2022~(FL-IJCAI), 2022}
+\vspace{1ex}
+\item[3.]
+Aegis: A Trusted, Automatic and Accurate Verification Framework for Vertical Federated Learning \\
+Cengguang Zhang, \underline{Junxue Zhang}, Di Chai, Kai Chen \\
+\emph{International Workshop on Federated and Transfer Learning for Data Sparsity and Confidentiality 
+in Conjunction with IJCAI 2021~(FL-IJCAI), 2021}, (Best Application Paper Award)
+\vspace{1ex}
+\item[4.] 
+Resilient Allreduce Tree for Distributed Machine Learning \\
+Xinchen Wan, Hong Zhang, Hao Wang, Shuihai Hu, \underline{Junxue Zhang}, Kai Chen \\
+\emph{4th Asia-Pacific Workshop on Networking (APNet 2020), 2020}
+\vspace{1ex}
+\item[5.] 
+Bridging the Edge-Cloud Barrier for Real-time Advanced Vision Analytics \\
+Yiding Wang, Weiyan Wang, \underline{Junxue Zhang}, Junchen Jiang and Kai Chen \\
+\emph{Proceedings of the 11th USENIX Conference on Hot Topics in Cloud Computing~(HotCloud), 2019}
+\vspace{1ex}
+\item[6.]
+Rethinking Transport Layer Design for Distributed Machine Learning \\
+Jiacheng Xia, Gaoxiong Zeng, \underline{Junxue Zhang}, Weiyan Wang, Wei Bai, Junchen Jiang and Kai Chen \\
+\emph{3th Asia-Pacific Workshop on Networking~(APNet 2019), 2019}
+\vspace{1ex}
+\item[7.]
+Quantifying the Performance of Federated Transfer Learning \\
+Qinghe Jing, Weiyan Wang, \underline{Junxue Zhang}, Han Tian, Kai Chen \\
+\emph{International Workshop on Federated Learning for User Privacy and Data Confidentiality 
+in Conjunction with IJCAI 2019~(FL-IJCAL), 2019}, (Best Student Paper Award)
+\end{itemize}
+\end{cvsection}
+
+\begin{cvsection}{INDUSTRY \\ EXPERIENCE\vspace{-2.7ex}}
+Co-founder/CTO, Clustar Co., Ltd. \hfill 2019 -- Now
+\begin{itemize}[leftmargin=*, noitemsep]
+\item Lead project on FPGA‑based hardware acceleration for cross‑silo federated learning
+\item Lead project on ASIC‑based hardware acceleration for fully homomorphic encryption
+\item Lead project on RDMA‑based networking acceleration/virtualization for cross‑silo federated learning
+\end{itemize}
+\end{cvsection}
+
+\begin{cvsection}{SERVICE}
+\begin{itemize}[leftmargin=*, noitemsep]
+\item Reviewer, IEEE Transaction on Big Data
+\item TPC Member, FL‑IJCAL 2022
+\item TPC Member, FL‑AAAI 2022
+\item TPC Member, FL‑IJCAI 2021
+\item Maintainer, FATE
+\end{itemize}
+\end{cvsection}
+
+\begin{cvsection}{TEACHING \& \\ TUTORING\vspace{-2.7ex}}
+\begin{itemize}[leftmargin=*, noitemsep]
+\item TA, HKUST MSBD 5014 IP -- Introduction to Federated Learning and its Applications \hfill 2022
+\item TA, HKUST COMP4621 -- Cloud Computing and Big Data Systems \hfill 2018
+\item TA, HKUST COMP4651 -- Computer Communication Networks \hfill 2017
+\item TA, HKUST COMP1021 -- Introduction to Computer Science \hfill 2017
+\end{itemize}
+\end{cvsection}
+
+\begin{cvsection}{HONORS \& \\ AWARDS\vspace{-2.7ex}}
+\begin{itemize}[leftmargin=*, noitemsep]
+\item Travel Grants, SIGCOMM \hfill 2017
+\item Postgraduate Fellowship, Hong Kong University of Science and Technology \hfill 2016 -- 2022
+\item National Scholarship, Southeast University \hfill 2014
+\item Google Excellent Student Scholarship \hfill 2012
+\item National Scholarship, Southeast University \hfill 2011
+\end{itemize}
+\end{cvsection}
+
 \end{document}
