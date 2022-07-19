@@ -29,9 +29,6 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: cv.tex
-          compiler: xelatex
-          extra_fonts: |
-            ./fonts/*.ttf
           
       - name: Github Action for Releasing the PDF
         uses: softprops/action-gh-release@v1
